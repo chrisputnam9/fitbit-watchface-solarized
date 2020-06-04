@@ -1,0 +1,30 @@
+{
+  "name": "solarized-beta",
+  "version": "0.2.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~4.1.0",
+    "@fitbit/sdk-cli": "^1.7.1"
+  },
+  "fitbit": {
+    "appUUID": "a45e1f62-160b-49dd-a600-866ec1199123",
+    "appType": "clockface",
+    "appDisplayName": "Solarized - Beta",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [],
+    "buildTargets": [
+      "higgs"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US"
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  },
+  "dependencies": {
+    "keytar": "^6.0.1"
+  }
+}
