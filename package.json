@@ -13,7 +13,11 @@
     "appDisplayName": "Solarized - Beta",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
-    "requestedPermissions": [],
+    "requestedPermissions": [
+        "access_internet",
+        "access_location",
+        "run_background"
+    ],
     "buildTargets": [
       "higgs"
     ],
