@@ -34,15 +34,17 @@ messaging.peerSocket.onmessage = function(evt) {
 function sendHostedData() {
 
     const server_url_data = settingsStorage.getItem('server_url');
+    const server_url = JSON.parse(server_url_data).name || false;
     console.log('fetching from server_url: ' + server_url);
 
     //TODO Add location to request data
     if (server_url) {
         fetch(server_url)
-        .then(response => {
+        .then(response => response.json())
+        .then(data => {
             console.log("response from server: ");
-            console.log(response);
-            messaging.peerSocket.send(response);
+            console.log(data);
+            messaging.peerSocket.send(data);
         })
         .catch(function (e) {
             console.log("ERROR:");
