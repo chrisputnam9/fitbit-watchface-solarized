@@ -1,5 +1,6 @@
 <svg>
     <rect id="background"/>
+    <text id="txtBat" class="text text-bat">100%</text>
     <text id="txtDate" class="text text-date">5014-91-23</text>
     <text id="txtTime" class="text text-time">50:14</text>
     <text id="txtDay" class="text text-day">SUNDAY (2)</text>
