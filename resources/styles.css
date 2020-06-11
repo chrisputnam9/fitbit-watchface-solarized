@@ -32,6 +32,7 @@
 }
 .text-server {
     text-length: 60;
+    font-size: 18;
     fill: #2aa198;
 }
 .text-binary {
@@ -43,7 +44,9 @@
 .text-date   { y: 35; }
 .text-time   { y: 110; }
 .text-day    { y: 145; }
-.text-server { y: 100%-60; }
+.text-server1 { y: 100%-80; }
+.text-server2 { y: 100%-60; }
+.text-server3 { y: 100%-40; }
 .text-binary { y: 100%-10; }
 
 /* Colors */

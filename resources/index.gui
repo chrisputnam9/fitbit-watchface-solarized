@@ -4,6 +4,8 @@
     <text id="txtDate" class="text text-date">5014-91-23</text>
     <text id="txtTime" class="text text-time">50:14</text>
     <text id="txtDay" class="text text-day">SUNDAY (2)</text>
-    <text id="txtServer" class="text text-server">SOLARIZED</text>
+    <text id="txtServer1" class="text text-server text-server1">SOLARIZED</text>
+    <text id="txtServer2" class="text text-server text-server2">S2</text>
+    <text id="txtServer3" class="text text-server text-server3">S3</text>
     <text id="txtBinary" class="text text-binary">:.:...</text>
 </svg>
