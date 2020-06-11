@@ -1,9 +1,12 @@
 import document from "document";
 import * as messaging from "messaging";
+import { battery } from "power";
+import { charger } from "power";
 
 import * as simpleClock from "./simple/clock";
 
 let background = document.getElementById("background");
+let txtBat = document.getElementById("txtBat");
 let txtTime = document.getElementById("txtTime");
 let txtDate = document.getElementById("txtDate");
 let txtDay = document.getElementById("txtDay");
@@ -28,4 +31,12 @@ function clockCallback(data) {
   txtBinary.text = data.unix;
 }
 
+/* --------- BATTERY ---------- */
+function batteryUpdate() {
+  txtBat.text = Math.floor(battery.chargeLevel) + "%";
+}
+
 simpleClock.initialize("minutes", clockCallback);
+
+batteryUpdate();
+battery.onchange = batteryUpdate;

@@ -17,6 +17,13 @@
     font-size: 30;
     fill: #839496;
 }
+.text-bat {
+    text-length: 4;
+    y: 20%;
+    x: 9%;
+    font-size: 80;
+    font-size: 20;
+}
 .text-time {
     text-length: 8;
     font-family: System-Bold;
