@@ -52,6 +52,13 @@
     fill: #859900;
 }
 
+.image-weather-icon {
+    x: 50%-32;
+    y: 65%-32;
+    width: 63;
+    height: 63;
+}
+
 .text-bat { x: 2%; y: 22%; text-anchor: start; }
 .text-day { x: 98%; y: 22%; text-anchor: end; }
 
@@ -86,3 +93,8 @@ blue      #268bd2
 cyan      #2aa198
 green     #859900
  */
+
+/***
+ * Weather Icons by Yorlmar Campos
+ * https://iconstore.co/icons/rns-weather-icons/
+ **/
