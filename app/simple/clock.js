@@ -43,15 +43,18 @@ function tickHandler(evt) {
     let mins = util.zeroPad(now.getMinutes());
     let timeString = `${hours}:${mins}`;
 
-    // Unix Minutes
-    let unixMinutes = Math.round(now.getTime() / 60);
-    let unixMinutesBinary = unixMinutes.toString(2);
-    let unixGraphical = unixMinutesBinary.replace(/1/g,':').replace(/0/g, '.');
+    // Binary Unix Time Display
+    // let unixMinutes = Math.round(now.getTime() / 60000);
+    let unixSeconds = Math.floor(now.getTime() / 1000);
+    let unixSecondsBinary = unixSeconds.toString(2);
+    let unixGraphicalTop = unixSecondsBinary.replace(/1/g,'|').replace(/0/g, "'");
+    let unixGraphicalBottom = unixGraphicalTop.replace(/'/g, '.');
 
     clockCallback({
         date: dateString,
         day: dayString,
         time: timeString,
-        unix: unixGraphical,
+        unixTop: unixGraphicalTop,
+        unixBottom: unixGraphicalBottom,
     });
 }
