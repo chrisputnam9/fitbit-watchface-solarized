@@ -7,7 +7,7 @@
     <text id="txtDay" class="text text-day">SUNDAY (2)</text>
     <text id="txtServer1" class="text text-server text-server1">Loading...</text>
     <text id="txtServer2" class="text text-server text-server2"></text>
-    <image id="imgWeatherIcon" class="image image-weather-icon" href="sun-4-clear.png"></image>
+    <image id="imgWeatherIcon" class="image image-weather-icon" href="img/weather/default-loading.png"></image>
     <text id="txtServer3" class="text text-server text-server3"></text>
     <text id="txtServer4" class="text text-server text-server4"></text>
     <text id="txtBinaryBottom" class="text text-binary text-binary-bottom">...</text>

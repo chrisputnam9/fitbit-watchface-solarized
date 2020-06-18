@@ -54,9 +54,10 @@
 
 .image-weather-icon {
     x: 50%-32;
-    y: 65%-32;
+    y: 67%-32;
     width: 63;
     height: 63;
+    fill: white;
 }
 
 .text-bat { x: 2%; y: 22%; text-anchor: start; }
