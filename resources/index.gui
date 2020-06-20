@@ -1,14 +1,23 @@
 <svg>
     <gradientRect id="background"/>
+
     <text id="txtBinaryTop" class="text text-binary text-binary-top">'''</text>
+
     <text id="txtBat" class="text text-bat">100%</text>
+     
     <text id="txtDate" class="text text-date">5014-91-23</text>
     <text id="txtTime" class="text text-time">50:14</text>
+
     <text id="txtDay" class="text text-day">SUNDAY (2)</text>
-    <text id="txtServer1" class="text text-server text-server1">Loading...</text>
-    <text id="txtServer2" class="text text-server text-server2"></text>
-    <image id="imgWeatherIcon" class="image image-weather-icon" href="img/weather/default-loading.png"></image>
-    <text id="txtServer3" class="text text-server text-server3"></text>
-    <text id="txtServer4" class="text text-server text-server4"></text>
+
+    <text id="txtInfo1" class="text text-info text-info1"></text>
+    <text id="txtInfo2" class="text text-info text-info2"></text>
+
+    <image id="imgWeatherIcon" class="image image-weather-icon" href="img/weather/default.png"></image>
+    <text id="txtInfo5" class="text text-info text-info5"></text>
+
+    <text id="txtInfo3" class="text text-info text-info3"></text>
+    <text id="txtInfo4" class="text text-info text-info4"></text>
+
     <text id="txtBinaryBottom" class="text text-binary text-binary-bottom">...</text>
 </svg>
