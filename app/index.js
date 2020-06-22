@@ -2,6 +2,7 @@ import document from "document";
 import * as messaging from "messaging";
 import { battery } from "power";
 import { charger } from "power";
+import * as fs from "fs";
 
 import * as simpleClock from "./simple/clock";
 
@@ -34,25 +35,47 @@ let txtInfo4 = document.getElementById("txtInfo4");
 let imgWeatherIcon = document.getElementById("imgWeatherIcon");
 let txtInfo5 = document.getElementById("txtInfo5");
 
+// Set data from server to watchface
+function showServerData(data) {
+    txtInfo1.text = data.temperature;
+
+    txtInfo2.text = data.temperature_range;
+
+    txtInfo3.text = data.update_time;
+    txtInfo4.text = data.location;
+
+    let icon = data.weather_icon;
+    if (VALID_ICONS.indexOf(icon) !== -1) {
+        imgWeatherIcon.href="img/weather/"+icon+".png"
+    }
+
+    txtInfo5.text = data.precipitation;
+}
+
+// Load from file cache
+console.log("Checking local JSON cache");
+if (fs.existsSync("server_response_json.txt")) {
+    console.log(" - cache file exists");
+    let jsonCache = fs.readFileSync("server_response_json.txt", "json");
+    showServerData(jsonCache);
+} else {
+    console.log(" - cache file does not exist");
+}
+
 /* --------- MESSAGING ---------- */
 // Listen for the onmessage event
 messaging.peerSocket.onmessage = function(evt) {
     // Output the message to the console
     console.log('peerSocket message received - watch');
-    console.log(JSON.stringify(evt.data));
 
-    txtInfo1.text = evt.data.temperature;
-    txtInfo2.text = evt.data.temperature_range;
-
-    txtInfo3.text = evt.data.update_time;
-    txtInfo4.text = evt.data.location;
-
-    let icon = evt.data.weather_icon;
-    if (VALID_ICONS.indexOf(icon) !== -1) {
-        imgWeatherIcon.href="img/weather/"+icon+".png"
+    if ( ! "success" in evt.data || ! evt.data.success ) {
+        console.log("ERROR: invlaid data");
+        return false;
     }
 
-    txtInfo5.text = evt.data.precipitation;
+    fs.writeFileSync("server_response_json.txt", evt.data, "json");
+
+    showServerData(evt.data);
 }
 
 /* --------- CLOCK ---------- */
