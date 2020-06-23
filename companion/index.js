@@ -44,7 +44,11 @@ function sendHostedData() {
         .then(data => {
             console.log("response from server: ");
             console.log(data);
-            messaging.peerSocket.send(data);
+            if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
+                messaging.peerSocket.send(data);
+            } else {
+                console.log("ERROR: Messaging connection is not open");
+            }
         })
         .catch(function (e) {
             console.log("ERROR:");
@@ -52,3 +56,6 @@ function sendHostedData() {
         });
     }
 }
+
+// Re-check for update every 30 minutes
+setInterval(sendHostedData, 1000 * 60 * 30);
