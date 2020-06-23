@@ -1,8 +1,6 @@
 <svg>
     <gradientRect id="background"/>
 
-    <text id="txtBinaryTop" class="text text-binary text-binary-top">'''</text>
-
     <text id="txtBat" class="text text-bat">100%</text>
      
     <text id="txtDate" class="text text-date">5014-91-23</text>
@@ -19,5 +17,77 @@
     <text id="txtInfo3" class="text text-info text-info3"></text>
     <text id="txtInfo4" class="text text-info text-info4"></text>
 
-    <text id="txtBinaryBottom" class="text text-binary text-binary-bottom">...</text>
+    <!-- Top Digits -->
+    <rect class="binary-digit binary-digit-top binary-digit-border" x="0" />
+    <rect class="binary-digit binary-digit-top binary-digit-32" x="12" />
+    <rect class="binary-digit binary-digit-top binary-digit-31" x="22" />
+    <rect class="binary-digit binary-digit-top binary-digit-30" x="32" />
+    <rect class="binary-digit binary-digit-top binary-digit-29" x="42" />
+    <rect class="binary-digit binary-digit-top binary-digit-28" x="52" />
+    <rect class="binary-digit binary-digit-top binary-digit-27" x="62" />
+    <rect class="binary-digit binary-digit-top binary-digit-26" x="72" />
+    <rect class="binary-digit binary-digit-top binary-digit-25" x="82" />
+    <rect class="binary-digit binary-digit-top binary-digit-24" x="92" />
+    <rect class="binary-digit binary-digit-top binary-digit-23" x="102" />
+    <rect class="binary-digit binary-digit-top binary-digit-22" x="112" />
+    <rect class="binary-digit binary-digit-top binary-digit-21" x="122" />
+    <rect class="binary-digit binary-digit-top binary-digit-20" x="132" />
+    <rect class="binary-digit binary-digit-top binary-digit-19" x="142" />
+    <rect class="binary-digit binary-digit-top binary-digit-18" x="152" />
+    <rect class="binary-digit binary-digit-top binary-digit-17" x="162" />
+    <rect class="binary-digit binary-digit-top binary-digit-16" x="172" />
+    <rect class="binary-digit binary-digit-top binary-digit-15" x="182" />
+    <rect class="binary-digit binary-digit-top binary-digit-14" x="192" />
+    <rect class="binary-digit binary-digit-top binary-digit-13" x="202" />
+    <rect class="binary-digit binary-digit-top binary-digit-12" x="212" />
+    <rect class="binary-digit binary-digit-top binary-digit-11" x="222" />
+    <rect class="binary-digit binary-digit-top binary-digit-10" x="232" />
+    <rect class="binary-digit binary-digit-top binary-digit-9" x="242" />
+    <rect class="binary-digit binary-digit-top binary-digit-8" x="252" />
+    <rect class="binary-digit binary-digit-top binary-digit-7" x="262" />
+    <rect class="binary-digit binary-digit-top binary-digit-6" x="272" />
+    <rect class="binary-digit binary-digit-top binary-digit-5" x="282" />
+    <rect class="binary-digit binary-digit-top binary-digit-4" x="292" />
+    <rect class="binary-digit binary-digit-top binary-digit-3" x="302" />
+    <rect class="binary-digit binary-digit-top binary-digit-2" x="312" />
+    <rect class="binary-digit binary-digit-top binary-digit-1" x="322" />
+    <rect class="binary-digit binary-digit-top binary-digit-0" x="332" />
+    <rect class="binary-digit binary-digit-top binary-digit-border" x="344" />
+
+    <!-- Bottom Digits -->
+    <rect class="binary-digit binary-digit-bottom binary-digit-border" x="0" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-32" x="12" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-31" x="22" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-30" x="32" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-29" x="42" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-28" x="52" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-27" x="62" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-26" x="72" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-25" x="82" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-24" x="92" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-23" x="102" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-22" x="112" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-21" x="122" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-20" x="132" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-19" x="142" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-18" x="152" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-17" x="162" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-16" x="172" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-15" x="182" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-14" x="192" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-13" x="202" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-12" x="212" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-11" x="222" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-10" x="232" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-9" x="242" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-8" x="252" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-7" x="262" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-6" x="272" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-5" x="282" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-4" x="292" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-3" x="302" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-2" x="312" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-1" x="322" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-0" x="332" />
+    <rect class="binary-digit binary-digit-bottom binary-digit-border" x="344" />
 </svg>

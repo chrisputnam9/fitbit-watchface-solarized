@@ -24,8 +24,6 @@ let txtBat = document.getElementById("txtBat");
 let txtTime = document.getElementById("txtTime");
 let txtDate = document.getElementById("txtDate");
 let txtDay = document.getElementById("txtDay");
-let txtBinaryBottom = document.getElementById("txtBinaryBottom");
-let txtBinaryTop = document.getElementById("txtBinaryTop");
 
 let txtInfo1 = document.getElementById("txtInfo1");
 let txtInfo2 = document.getElementById("txtInfo2");
@@ -83,8 +81,6 @@ function clockCallback(data) {
   txtTime.text = data.time;
   txtDate.text = data.date;
   txtDay.text = data.day;
-  txtBinaryBottom.text = data.unixBottom;
-  txtBinaryTop.text = data.unixTop;
 }
 
 /* --------- BATTERY ---------- */
