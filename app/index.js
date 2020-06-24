@@ -96,3 +96,17 @@ simpleClock.initialize("seconds", clockCallback);
 
 batteryUpdate();
 battery.onchange = batteryUpdate;
+
+/* --------- SERVER REFRESH ---------- */
+function requestHostedData() {
+    if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
+        messaging.peerSocket.send({
+            request: 'hosted_data'
+        });
+    } else {
+        console.log("ERROR: Messaging connection is not open");
+    }
+}
+// Re-check for update every 30 minutes
+setInterval(requestHostedData, 1000 * 60 * 30);
+// setInterval(requestHostedData, 1000); // for testing

@@ -29,6 +29,11 @@ messaging.peerSocket.onmessage = function(evt) {
     // Output the message to the console
     console.log('peerSocket onmessage');
     console.log(JSON.stringify(evt.data));
+    if ('request' in evt.data) {
+        if (evt.data.request == 'hosted_data') {
+            sendHostedData();
+        }
+    }
 }
 
 function sendHostedData() {
@@ -56,6 +61,3 @@ function sendHostedData() {
         });
     }
 }
-
-// Re-check for update every 30 minutes
-setInterval(sendHostedData, 1000 * 60 * 30);
