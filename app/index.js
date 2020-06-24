@@ -99,6 +99,7 @@ battery.onchange = batteryUpdate;
 
 /* --------- SERVER REFRESH ---------- */
 function requestHostedData() {
+    console.log('Requesting fresh server info...');
     if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
         messaging.peerSocket.send({
             request: 'hosted_data'
