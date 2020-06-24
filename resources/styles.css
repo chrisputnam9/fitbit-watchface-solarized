@@ -13,6 +13,25 @@
     gradient-color2: #002b36;
 }
 
+.binary-digit {
+    fill: #859900;
+    y: 0;
+    width: 4;
+    height: 4;
+}
+
+.binary-digit-border {
+    height: 18;
+    fill: #2aa198;
+}
+
+.binary-digit-bottom {
+    y: 100%-4;
+}
+.binary-digit-bottom.binary-digit-border {
+    y: 100%-18;
+}
+
 .text {
     text-length: 10;
     x: 50%;
@@ -46,11 +65,6 @@
     font-size: 17;
     fill: #2aa198;
 }
-.text-binary {
-    text-length: 60;
-    font-size:45;
-    fill: #859900;
-}
 
 .image-weather-icon {
     x: 50%-32;
@@ -66,7 +80,7 @@
 
 .text-binary-top { y: 18; }
 
-.text-date   { y: 55; }
+.text-date   { y: 45; }
 .text-time   { y: 130; }
 
 .text-info1 { x: 2%; y: 100%-70; text-anchor: start; font-size: 35; }

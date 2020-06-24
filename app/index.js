@@ -6,6 +6,7 @@ import * as fs from "fs";
 
 import * as simpleClock from "./simple/clock";
 
+const SCREEN_HEIGHT=250;
 const VALID_ICONS=[
     'clear-day',
     'clear-night',
@@ -24,8 +25,6 @@ let txtBat = document.getElementById("txtBat");
 let txtTime = document.getElementById("txtTime");
 let txtDate = document.getElementById("txtDate");
 let txtDay = document.getElementById("txtDay");
-let txtBinaryBottom = document.getElementById("txtBinaryBottom");
-let txtBinaryTop = document.getElementById("txtBinaryTop");
 
 let txtInfo1 = document.getElementById("txtInfo1");
 let txtInfo2 = document.getElementById("txtInfo2");
@@ -34,6 +33,15 @@ let txtInfo4 = document.getElementById("txtInfo4");
 
 let imgWeatherIcon = document.getElementById("imgWeatherIcon");
 let txtInfo5 = document.getElementById("txtInfo5");
+
+let rectBinaryDigits = {
+    top: [],
+    bottom: []
+}
+for (let i=0;i<=32;i++) {
+    rectBinaryDigits.top[i] = document.getElementById("binary-digit-top-"+i);
+    rectBinaryDigits.bottom[i] = document.getElementById("binary-digit-bottom-"+i);
+}
 
 // Set data from server to watchface
 function showServerData(data) {
@@ -80,16 +88,33 @@ messaging.peerSocket.onmessage = function(evt) {
 
 /* --------- CLOCK ---------- */
 function clockCallback(data) {
-  txtTime.text = data.time;
-  txtDate.text = data.date;
-  txtDay.text = data.day;
-  txtBinaryBottom.text = data.unixBottom;
-  txtBinaryTop.text = data.unixTop;
+    txtTime.text = data.time;
+    txtDate.text = data.date;
+    txtDay.text = data.day;
+
+    let i = 0;
+    let digit;
+    while (digit = data.unixSecondsArray.pop())
+    {
+        if (rectBinaryDigits.top[i]) {
+            if (digit == "1") {
+                rectBinaryDigits.top[i].height = 4;
+                rectBinaryDigits.bottom[i].height = 4;
+                rectBinaryDigits.bottom[i].y = (SCREEN_HEIGHT-4);
+            } else {
+                rectBinaryDigits.top[i].height = 12;
+                rectBinaryDigits.bottom[i].height = 12;
+                 rectBinaryDigits.bottom[i].y = (SCREEN_HEIGHT-12);
+            }
+        }
+
+        i++;
+    }
 }
 
 /* --------- BATTERY ---------- */
 function batteryUpdate() {
-  txtBat.text = Math.floor(battery.chargeLevel) + "%";
+    txtBat.text = Math.floor(battery.chargeLevel) + "%";
 }
 
 simpleClock.initialize("seconds", clockCallback);
