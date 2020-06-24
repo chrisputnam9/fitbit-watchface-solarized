@@ -17,18 +17,16 @@
     fill: #859900;
     y: 0;
     width: 4;
-    height: 12;
+    height: 4;
 }
 
 .binary-digit-border {
     height: 18;
-}
-
-.binary-digit-top {
+    fill: #2aa198;
 }
 
 .binary-digit-bottom {
-    y: 100%-12;
+    y: 100%-4;
 }
 .binary-digit-bottom.binary-digit-border {
     y: 100%-18;
@@ -82,7 +80,7 @@
 
 .text-binary-top { y: 18; }
 
-.text-date   { y: 55; }
+.text-date   { y: 45; }
 .text-time   { y: 130; }
 
 .text-info1 { x: 2%; y: 100%-70; text-anchor: start; font-size: 35; }
