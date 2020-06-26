@@ -98,13 +98,13 @@ function clockCallback(data) {
     {
         if (rectBinaryDigits.top[i]) {
             if (digit == "1") {
-                rectBinaryDigits.top[i].height = 4;
-                rectBinaryDigits.bottom[i].height = 4;
-                rectBinaryDigits.bottom[i].y = (SCREEN_HEIGHT-4);
-            } else {
                 rectBinaryDigits.top[i].height = 12;
                 rectBinaryDigits.bottom[i].height = 12;
                  rectBinaryDigits.bottom[i].y = (SCREEN_HEIGHT-12);
+            } else {
+                rectBinaryDigits.top[i].height = 4;
+                rectBinaryDigits.bottom[i].height = 4;
+                rectBinaryDigits.bottom[i].y = (SCREEN_HEIGHT-4);
             }
         }
 
