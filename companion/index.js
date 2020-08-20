@@ -38,9 +38,15 @@ messaging.peerSocket.onmessage = function(evt) {
 
 function sendHostedData() {
 
-    const server_url_data = settingsStorage.getItem('server_url');
-    const server_url = JSON.parse(server_url_data).name || false;
-    console.log('fetching from server_url: ' + server_url);
+    const server_url_json = settingsStorage.getItem('server_url');
+    const server_url_data = JSON.parse(server_url_json);
+    const server_url = (server_url_data && 'name' in server_url_data) ? server_url_data.name : false;
+    if (server_url) {
+        console.log('fetching from server_url: ' + server_url);
+    } else {
+        console.log("ERROR: Check settings - server url is empty");
+        return;
+    }
 
     //TODO Add location to request data
     if (server_url) {
