@@ -2,7 +2,7 @@
 A watchface mainly for my own use
 
 ## Demo
-![Watchface Demo](https://github.com/chrisputnam9/fitbit-watchface-solarized/_resources/demo.gif)
+![Watchface Demo](https://github.com/chrisputnam9/fitbit-watchface-solarized/raw/master/_resources/demo.gif)
 
 ## Features
 From top to bottom, left to right
