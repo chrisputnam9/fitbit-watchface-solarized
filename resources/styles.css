@@ -1,109 +1,136 @@
 #background {
-    x: 0;
-    y: 0;
-    width: 100%;
-    height: 100%;
-    /* fill: #002b36; */
-    gradient-type: linear;
-    gradient-x1: 0;
-    gradient-y1: 0;
-    gradient-x2: 100%;
-    gradient-y2: 100%;
-    gradient-color1: #073642;
-    gradient-color2: #002b36;
+	x: 0;
+	y: 0;
+	width: 100%;
+	height: 100%;
+	gradient-type: radial;
+
+	gradient-x1: 50%;
+	gradient-y1: 50%;
+	gradient-color1: #002b36;
+	gradient-x2: 100%;
+	gradient-y2: 100%;
+	gradient-color2: #000000;
 }
 
 .binary-digit {
-    fill: #859900;
-    y: 0;
-    width: 4;
-    height: 4;
+	fill: #859900;
+	y: 10;
+	width: 4;
+	height: 4;
 }
 
 .binary-digit-border {
-    height: 18;
-    fill: #b58900;
-    /*
-base03    #002b36
-base02    #073642
-base01    #586e75
-base00    #657b83
-base0     #839496
-base1     #93a1a1
-base2     #eee8d5
-base3     #fdf6e3
-yellow    #b58900
-*/
+	height: 18;
+	fill: #b58900;
 }
 
 .binary-digit-bottom {
-    y: 100%-4;
+	y: 352;
 }
 .binary-digit-bottom.binary-digit-border {
-    y: 100%-18;
+	y: 338;
 }
 
 .text {
-    text-length: 10;
-    x: 50%;
-    width: 100%;
-    height: 100%;
-    font-family: System-Regular;
-    font-weight: regular;
-    text-anchor: middle;
-    font-size: 30;
-    fill: #839496;
+	text-length: 10;
+	x: 50%;
+	width: 100%;
+	height: 100%;
+	font-family: System-Regular;
+	font-weight: regular;
+	text-anchor: middle;
+	font-size: 30;
+	fill: #839496;
 }
 .text-bat {
-    text-length: 4;
-    font-size: 20;
+	text-length: 4;
+	font-size: 20;
 }
 .text-day {
-    text-length: 7;
-    font-size: 20;
+	text-length: 7;
+	font-size: 20;
 }
 .text-date {
-    fill: #2aa198;
+	fill: #2aa198;
 }
 .text-time {
-    text-length: 8;
-    font-family: System-Bold;
-    font-size: 80;
-    fill: #268bd2;
+	text-length: 8;
+	font-family: System-Bold;
+	font-size: 80;
+	fill: #268bd2;
 }
 .text-info {
-    text-length: 60;
-    font-size: 17;
-    fill: #2aa198;
+	text-length: 60;
+	font-size: 17;
+	fill: #2aa198;
 }
 
 .image-weather-icon {
-    x: 50%-32;
-    y: 67%-32;
-    width: 63;
-    height: 63;
-    fill: #cb4b16; /* orange */
+	x: 50%-32;
+	y: 65%-32;
+	width: 63;
+	height: 63;
+	fill: #cb4b16; /* orange */
 }
-.text-info5 { x: 50%; y: 67%+50; }
+.text-info5 {
+	x: 50%;
+	y: 65%+50;
+}
 
-.text-bat { x: 2%; y: 22%; text-anchor: start; }
-.text-day { x: 98%; y: 22%; text-anchor: end; }
+.text-bat {
+	x: 4%;
+	y: 32%;
+	text-anchor: start;
+}
+.text-day {
+	x: 96%;
+	y: 32%;
+	text-anchor: end;
+}
 
-.text-binary-top { y: 18; }
+.text-binary-top {
+	y: 18;
+}
 
-.text-date   { y: 45; }
-.text-time   { y: 130; }
+.text-date {
+	y: 25%;
+}
+.text-time {
+	y: 50%;
+}
 
-.text-info1 { x: 2%; y: 100%-70; text-anchor: start; font-size: 35; }
-.text-info2 { x: 2%; y: 67%+50; text-anchor: start; }
+.text-info1 {
+	x: 4%;
+	y: 100%-100;
+	text-anchor: start;
+	font-size: 35;
+}
+.text-info2 {
+	x: 2%;
+	y: 65%+50;
+	text-anchor: start;
+}
 
-.text-info3 { x: 98%; y: 100%-70; text-anchor: end; font-size: 35; }
-.text-info4 { x: 98%; y: 67%+50; text-anchor: end; }
+.text-info3 {
+	x: 96%;
+	y: 100%-100;
+	text-anchor: end;
+	font-size: 35;
+}
+.text-info4 {
+	x: 98%;
+	y: 65%+50;
+	text-anchor: end;
+}
 
-.text-binary-bottom { y: 100%+12; }
+.text-binary-bottom {
+	y: 100%+12;
+}
 
 /* Colors */
 /*
+https://ethanschoonover.com/solarized/
 base03    #002b36
 base02    #073642
 base01    #586e75
