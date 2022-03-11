@@ -17,4 +17,40 @@
     <text id="txtInfo3" class="text text-info text-info3"></text>
     <text id="txtInfo4" class="text text-info text-info4"></text>
 
+    <!-- Top Digits -->
+	<gradientRect id="binary-digit-top-32" class="binary-digit binary-digit-top" x="22" y="40" />
+	<gradientRect id="binary-digit-top-31" class="binary-digit binary-digit-top" x="31" y="30" />
+	<gradientRect id="binary-digit-top-30" class="binary-digit binary-digit-top" x="40" y="20" />
+	<gradientRect id="binary-digit-top-29" class="binary-digit binary-digit-top" x="49" y="12" />
+	<gradientRect id="binary-digit-top-28" class="binary-digit binary-digit-top" x="58" y="6" />
+	<gradientRect id="binary-digit-top-27" class="binary-digit binary-digit-top" x="67" y="2" />
+	<gradientRect id="binary-digit-top-26" class="binary-digit binary-digit-top" x="76" />
+	<gradientRect id="binary-digit-top-25" class="binary-digit binary-digit-top" x="85" />
+	<gradientRect id="binary-digit-top-24" class="binary-digit binary-digit-top" x="94" />
+	<gradientRect id="binary-digit-top-23" class="binary-digit binary-digit-top" x="103" />
+	<gradientRect id="binary-digit-top-22" class="binary-digit binary-digit-top" x="112" />
+	<gradientRect id="binary-digit-top-21" class="binary-digit binary-digit-top" x="121" />
+	<gradientRect id="binary-digit-top-20" class="binary-digit binary-digit-top" x="130" />
+	<gradientRect id="binary-digit-top-19" class="binary-digit binary-digit-top" x="139" />
+	<gradientRect id="binary-digit-top-18" class="binary-digit binary-digit-top" x="148" />
+	<gradientRect id="binary-digit-top-17" class="binary-digit binary-digit-top" x="157" />
+	<gradientRect id="binary-digit-top-16" class="binary-digit binary-digit-top" x="166" />
+	<gradientRect id="binary-digit-top-15" class="binary-digit binary-digit-top" x="175" />
+	<gradientRect id="binary-digit-top-14" class="binary-digit binary-digit-top" x="184" />
+	<gradientRect id="binary-digit-top-13" class="binary-digit binary-digit-top" x="193" />
+	<gradientRect id="binary-digit-top-12" class="binary-digit binary-digit-top" x="202" />
+	<gradientRect id="binary-digit-top-11" class="binary-digit binary-digit-top" x="211" />
+	<gradientRect id="binary-digit-top-10" class="binary-digit binary-digit-top" x="220" />
+	<gradientRect id="binary-digit-top-9" class="binary-digit binary-digit-top" x="229" />
+	<gradientRect id="binary-digit-top-8" class="binary-digit binary-digit-top" x="238" />
+	<gradientRect id="binary-digit-top-7" class="binary-digit binary-digit-top" x="247" />
+	<gradientRect id="binary-digit-top-6" class="binary-digit binary-digit-top" x="256" />
+	<gradientRect id="binary-digit-top-5" class="binary-digit binary-digit-top" x="265" y="2" />
+	<gradientRect id="binary-digit-top-4" class="binary-digit binary-digit-top" x="274" y="6" />
+	<gradientRect id="binary-digit-top-3" class="binary-digit binary-digit-top" x="283" y="12" />
+	<gradientRect id="binary-digit-top-2" class="binary-digit binary-digit-top" x="292" y="20" />
+	<gradientRect id="binary-digit-top-1" class="binary-digit binary-digit-top" x="301" y="30" />
+	<gradientRect id="binary-digit-top-0" class="binary-digit binary-digit-top" x="310" y="40" />
+
+
 </svg>

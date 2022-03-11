@@ -1,27 +1,29 @@
     <!-- Top Digits -->
-    <rect class="binary-digit binary-digit-top binary-digit-border" x="0" />
+<?php /*<gradientRect class="binary-digit binary-digit-top binary-digit-border" x="0" />*/ ?>
 <?php
     $d=32;
-    $x=12;
+    $x=22;
     while ($d >= 0)
     {
-        echo "		<rect id=\"binary-digit-top-".$d."\" class=\"binary-digit binary-digit-top\" x=\"".$x."\" />\n";
+        echo "		<gradientRect id=\"binary-digit-top-".$d."\" class=\"binary-digit binary-digit-top\" x=\"".$x."\" />\n";
         $d--;
-        $x+=10;
+        $x+=9;
     }
 ?>
-    <rect class="binary-digit binary-digit-top binary-digit-border" x="344" />
+<?php /* <gradientRect class="binary-digit binary-digit-bottom binary-digit-border" x="332" /> */ ?>
+
+<?php exit; ?>
 
     <!-- Bottom Digits -->
-    <rect class="binary-digit binary-digit-bottom binary-digit-border" x="0" />
+<?php /*<gradientRect class="binary-digit binary-digit-top binary-digit-border" x="0" />*/ ?>
 <?php
         $d=32;
         $x=12;
         while ($d >= 0)
         {
-            echo "		<rect id=\"binary-digit-bottom-".$d."\" class=\"binary-digit binary-digit-bottom\" x=\"".$x."\" />\n";
+            echo "		<gradientRect id=\"binary-digit-bottom-".$d."\" class=\"binary-digit binary-digit-bottom\" x=\"".$x."\" />\n";
             $d--;
             $x+=10;
         }
 ?>
-    <rect class="binary-digit binary-digit-bottom binary-digit-border" x="344" />
+<?php /* <gradientRect class="binary-digit binary-digit-bottom binary-digit-border" x="332" /> */ ?>
