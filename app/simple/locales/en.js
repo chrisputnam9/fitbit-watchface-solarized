@@ -1,1 +1,1 @@
-export let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+export let days = [ 'SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA' ];

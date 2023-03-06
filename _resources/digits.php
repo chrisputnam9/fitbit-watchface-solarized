@@ -1,29 +1,42 @@
-    <!-- Top Digits -->
-<?php /*<gradientRect class="binary-digit binary-digit-top binary-digit-border" x="0" />*/ ?>
+<?php
+	$y_map = [ 40, 30, 20, 12, 6, 2, ];
+?>
+	<!-- Top Digits -->
 <?php
     $d=32;
     $x=22;
     while ($d >= 0)
     {
-        echo "		<gradientRect id=\"binary-digit-top-".$d."\" class=\"binary-digit binary-digit-top\" x=\"".$x."\" />\n";
+		$y = 0;
+		if (isset($y_map[$d])) {
+			$y = $y_map[$d];
+		} elseif (isset($y_map[(32-$d)])) {
+			$y = $y_map[32-$d];
+		}
+
+        echo '    <gradientRect id="binary-digit-top-'.$d.'" class="binary-digit binary-digit-top" x="'.$x.'" y="'.$y.'" />' . "\n";
         $d--;
         $x+=9;
     }
 ?>
-<?php /* <gradientRect class="binary-digit binary-digit-bottom binary-digit-border" x="332" /> */ ?>
-
-<?php exit; ?>
 
     <!-- Bottom Digits -->
-<?php /*<gradientRect class="binary-digit binary-digit-top binary-digit-border" x="0" />*/ ?>
 <?php
-        $d=32;
-        $x=12;
-        while ($d >= 0)
-        {
-            echo "		<gradientRect id=\"binary-digit-bottom-".$d."\" class=\"binary-digit binary-digit-bottom\" x=\"".$x."\" />\n";
-            $d--;
-            $x+=10;
-        }
+	$d=32;
+	$x=22;
+	while ($d >= 0)
+	{
+		$y = 0;
+		if (isset($y_map[$d])) {
+			$y = $y_map[$d];
+		} elseif (isset($y_map[(32-$d)])) {
+			$y = $y_map[32-$d];
+		}
+
+		$y+= 20;
+
+        echo '    <gradientRect id="binary-digit-bottom-'.$d.'" class="binary-digit binary-digit-bottom" x="'.$x.'" y="100%-'.$y.'" />' . "\n";
+		$d--;
+		$x+=9;
+	}
 ?>
-<?php /* <gradientRect class="binary-digit binary-digit-bottom binary-digit-border" x="332" /> */ ?>

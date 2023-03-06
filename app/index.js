@@ -5,7 +5,9 @@ import * as fs from 'fs';
 
 import * as simpleClock from './simple/clock';
 
-const SCREEN_HEIGHT = 250;
+const SCREEN_HEIGHT = 336;
+const BINARY_DIGIT_ZERO = 20;
+const BINARY_DIGIT_ONE = 28;
 const VALID_ICONS = [
 	'clear-day',
 	'clear-night',
@@ -18,6 +20,7 @@ const VALID_ICONS = [
 	'partly-cloudy-day',
 	'partly-cloudy-night',
 ];
+const BINARY_Y_MAP = [ 40, 30, 20, 12, 6, 2 ];
 
 const txtBat = document.getElementById( 'txtBat' );
 const txtTime = document.getElementById( 'txtTime' );
@@ -97,17 +100,26 @@ function clockCallback( data ) {
 	let i = 0;
 	let digit;
 	while ( ( digit = data.unixSecondsArray.pop() ) ) {
+		let bottom_y_adjustment = 0;
+		const i_from_end = 32 - i;
+
+		if ( i in BINARY_Y_MAP ) {
+			bottom_y_adjustment = BINARY_Y_MAP[ i ];
+		} else if ( i_from_end in BINARY_Y_MAP ) {
+			bottom_y_adjustment = BINARY_Y_MAP[ i_from_end ];
+		}
+
 		if ( rectBinaryDigits.top[ i ] ) {
 			if ( digit === '1' ) {
-				rectBinaryDigits.top[ i ].height = 28;
-				// rectBinaryDigits.top[ i ][ 'gradient-color2' ] = '#cb4b16'; // orange
-				// rectBinaryDigits.bottom[ i ].height = 12;
-				// rectBinaryDigits.bottom[ i ].y = SCREEN_HEIGHT - 12;
+				rectBinaryDigits.top[ i ].height = BINARY_DIGIT_ONE;
+				rectBinaryDigits.bottom[ i ].height = BINARY_DIGIT_ONE;
+				rectBinaryDigits.bottom[ i ].y =
+					SCREEN_HEIGHT - ( BINARY_DIGIT_ONE + bottom_y_adjustment );
 			} else {
-				rectBinaryDigits.top[ i ].height = 20;
-				// rectBinaryDigits.top[ i ][ 'gradient-color2' ] = '#859900'; //green
-				// rectBinaryDigits.bottom[ i ].height = 4;
-				// rectBinaryDigits.bottom[ i ].y = SCREEN_HEIGHT - 4;
+				rectBinaryDigits.top[ i ].height = BINARY_DIGIT_ZERO;
+				rectBinaryDigits.bottom[ i ].height = BINARY_DIGIT_ZERO;
+				rectBinaryDigits.bottom[ i ].y =
+					SCREEN_HEIGHT - ( BINARY_DIGIT_ZERO + bottom_y_adjustment );
 			}
 		}
 
@@ -120,7 +132,7 @@ function batteryUpdate() {
 	txtBat.text = Math.floor( battery.chargeLevel ) + '%';
 }
 
-simpleClock.initialize( 'seconds', clockCallback );
+simpleClock.initialize( 'minutes', clockCallback );
 
 batteryUpdate();
 battery.onchange = batteryUpdate;
