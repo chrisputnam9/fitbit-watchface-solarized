@@ -57,8 +57,8 @@ function sendHostedData() {
 	if ( server_url ) {
 		// Add geo location to request data -  if we have it
 		if ( 'coords' in geo_position ) {
-			server_url += '&lng=' + geo_position.coords.longitude;
 			server_url += '&lat=' + geo_position.coords.latitude;
+			server_url += '&lng=' + geo_position.coords.longitude;
 		}
 
 		fetch( server_url )
