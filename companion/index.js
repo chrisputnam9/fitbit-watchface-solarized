@@ -1,6 +1,7 @@
 import { settingsStorage } from 'settings';
 import * as messaging from 'messaging';
 import { geolocation } from 'geolocation';
+import { localStorage } from 'local-storage';
 
 console.log( 'Companion JS running' );
 
@@ -47,35 +48,22 @@ function maybeSendHostedData() {
  */
 function addGeoPosition( server_url ) {
 	console.log( 'addGeoPosition(' + server_url + ')' );
-	geolocation.getCurrentPosition(
-		( geo_position ) => {
-			if (
-				geo_position &&
-				typeof geo_position === 'object' &&
-				'coords' in geo_position &&
-				'latitude' in geo_position.coords
-			) {
-				server_url += '&lat=' + geo_position.coords.latitude;
-				server_url += '&lng=' + geo_position.coords.longitude;
-			}
-			sendHostedData( server_url );
-		},
-		( error ) => {
-			console.log(
-				' - ERROR during geolocation.getCurrentPosition: ' +
-					error.code +
-					': ' +
-					error.message,
-				'Continuing without geolocation data'
-			);
-			sendHostedData( server_url );
-		},
-		{
-			enableHighAccuracy: false,
-			maximumAge: 3600000, // 1 hr cache = 60 * 60 * 1000 ms
-			timeout: 5000, // 5 second timeout = 5 * 1000 ms
-		}
-	);
+
+	const geo_position_json = localStorage.getItem( 'fbs-last-position' );
+	console.log( 'Position from storage: ', geo_position_json );
+	const geo_position = geo_position_json
+		? JSON.parse( geo_position_json )
+		: false;
+	if (
+		geo_position &&
+		typeof geo_position === 'object' &&
+		'lat' in geo_position
+	) {
+		server_url += '&lat=' + geo_position.lat;
+		server_url += '&lng=' + geo_position.lng;
+	}
+
+	sendHostedData( server_url );
 }
 
 function sendHostedData( server_url ) {
@@ -101,3 +89,39 @@ function sendHostedData( server_url ) {
 			);
 		} );
 }
+
+/**
+ * Listen constantly for geolocation
+ * - Store last position in localStorage for reference
+ */
+geolocation.watchPosition(
+	( geo_position ) => {
+		if (
+			geo_position &&
+			typeof geo_position === 'object' &&
+			'coords' in geo_position &&
+			'latitude' in geo_position.coords
+		) {
+			localStorage.setItem(
+				'fbs-last-position',
+				JSON.stringify( {
+					lat: geo_position.coords.latitude,
+					lng: geo_position.coords.longitude,
+				} )
+			);
+		}
+	},
+	( error ) => {
+		console.log(
+			' - ERROR during geolocation.watchPosition: ' +
+				error.code +
+				': ' +
+				error.message
+		);
+	},
+	{
+		enableHighAccuracy: true,
+		maximumAge: Infinity,
+		timeout: 60000, // 60 second timeout = 60 * 1000 ms
+	}
+);
