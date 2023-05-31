@@ -8,8 +8,8 @@ console.log( 'Companion JS running' );
 // Listen for the onopen event
 messaging.peerSocket.onopen = function () {
 	console.log( 'peerSocket.onopen - will send hosted data to watch' );
-	// Fetch and send hosted data response
-	maybeSendHostedData();
+	// Kick off - fetch and send hosted data response
+	tryUpdateGeoPosition();
 };
 
 // Listen for the onmessage event
@@ -21,10 +21,48 @@ messaging.peerSocket.onmessage = function ( evt ) {
 			console.log(
 				' - hosted_data requested - will send hosted data to watch'
 			);
-			maybeSendHostedData();
+			tryUpdateGeoPosition();
 		}
 	}
 };
+
+function tryUpdateGeoPosition() {
+	geolocation.getCurrentPosition(
+		( geo_position ) => {
+			if (
+				geo_position &&
+				typeof geo_position === 'object' &&
+				'coords' in geo_position &&
+				'latitude' in geo_position.coords
+			) {
+				const geo_position_json = JSON.stringify( {
+					lat: geo_position.coords.latitude,
+					lng: geo_position.coords.longitude,
+				} );
+				console.log(
+					'tryUpdateGeoPosition succeeded.  Storing: ' +
+						geo_position_json
+				);
+				localStorage.setItem( 'fbs-last-position', geo_position_json );
+				maybeSendHostedData();
+			}
+		},
+		( error ) => {
+			console.log(
+				' - ERROR during geolocation.getCurrentPosition: ' +
+					error.code +
+					': ' +
+					error.message
+			);
+			maybeSendHostedData();
+		},
+		{
+			enableHighAccuracy: true,
+			maximumAge: Infinity,
+			timeout: 60000, // 60 second timeout = 60 * 1000 ms
+		}
+	);
+}
 
 function maybeSendHostedData() {
 	console.log( 'maybeSendHostedData:' );
@@ -49,11 +87,13 @@ function maybeSendHostedData() {
 function addGeoPosition( server_url ) {
 	console.log( 'addGeoPosition(' + server_url + ')' );
 
+	// Get location data from storage as fallback
 	const geo_position_json = localStorage.getItem( 'fbs-last-position' );
 	console.log( 'Position from storage: ', geo_position_json );
 	const geo_position = geo_position_json
 		? JSON.parse( geo_position_json )
 		: false;
+
 	if (
 		geo_position &&
 		typeof geo_position === 'object' &&
@@ -89,39 +129,3 @@ function sendHostedData( server_url ) {
 			);
 		} );
 }
-
-/**
- * Listen constantly for geolocation
- * - Store last position in localStorage for reference
- */
-geolocation.watchPosition(
-	( geo_position ) => {
-		if (
-			geo_position &&
-			typeof geo_position === 'object' &&
-			'coords' in geo_position &&
-			'latitude' in geo_position.coords
-		) {
-			localStorage.setItem(
-				'fbs-last-position',
-				JSON.stringify( {
-					lat: geo_position.coords.latitude,
-					lng: geo_position.coords.longitude,
-				} )
-			);
-		}
-	},
-	( error ) => {
-		console.log(
-			' - ERROR during geolocation.watchPosition: ' +
-				error.code +
-				': ' +
-				error.message
-		);
-	},
-	{
-		enableHighAccuracy: true,
-		maximumAge: Infinity,
-		timeout: 60000, // 60 second timeout = 60 * 1000 ms
-	}
-);
