@@ -27,13 +27,15 @@ const txtTime = document.getElementById( 'txtTime' );
 const txtDate = document.getElementById( 'txtDate' );
 const txtDay = document.getElementById( 'txtDay' );
 
-const txtInfo1 = document.getElementById( 'txtInfo1' );
-const txtInfo2 = document.getElementById( 'txtInfo2' );
-const txtInfo3 = document.getElementById( 'txtInfo3' );
-const txtInfo4 = document.getElementById( 'txtInfo4' );
+const txtInfoMidLeft = document.getElementById( 'txtInfoMidLeft' );
+const txtInfoMidLeft2 = document.getElementById( 'txtInfoMidLeft2' );
+const txtInfoMidRight = document.getElementById( 'txtInfoMidRight' );
+const txtInfoBottom = document.getElementById( 'txtInfoBottom' );
+const txtInfoMidBottom = document.getElementById( 'txtInfoMidBottom' );
+const txtInfoMidRight2 = document.getElementById( 'txtInfoMidRight2' );
+const txtInfoMidRight3 = document.getElementById( 'txtInfoMidRight3' );
 
 const imgWeatherIcon = document.getElementById( 'imgWeatherIcon' );
-const txtInfo5 = document.getElementById( 'txtInfo5' );
 
 const rectBinaryDigits = {
 	top: [],
@@ -50,19 +52,24 @@ for ( let i = 0; i <= 32; i++ ) {
 
 // Set data from server to watchface
 function showServerData( data ) {
-	txtInfo1.text = data.temperature;
+	txtInfoMidLeft.text = data.temperature;
 
-	txtInfo2.text = data.temperature_range;
+	txtInfoMidLeft2.text = data.temperature_range;
 
-	txtInfo3.text = data.update_time;
-	txtInfo4.text = data.location;
+	txtInfoMidRight.text = data.update_time;
+	txtInfoBottom.text = data.location;
 
 	const icon = data.weather_icon;
 	if ( VALID_ICONS.indexOf( icon ) !== -1 ) {
 		imgWeatherIcon.href = 'img/weather/' + icon + '.png';
 	}
 
-	txtInfo5.text = data.precipitation;
+	txtInfoMidBottom.text = data.precipitation;
+
+	if ( 'status' in data && 'status' in data.status ) {
+		txtInfoMidRight2.text = data.status.status;
+		txtInfoMidRight3.text = '(' + data.status.last_swipe + ')';
+	}
 }
 
 // Load from file cache

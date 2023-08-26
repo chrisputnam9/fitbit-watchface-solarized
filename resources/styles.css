@@ -15,15 +15,15 @@
 
 .binary-digit {
 	/* fill: #859900; */
-	gradient-type: 'linear';
+	gradient-type: "linear";
 
-	gradient-x1: '0';
-	gradient-y1: '0';
-	gradient-color1: '#000000';
+	gradient-x1: "0";
+	gradient-y1: "0";
+	gradient-color1: "#000000";
 
-	gradient-x2: '0';
-	gradient-y2: '100%';
-	gradient-color2: '#859900';
+	gradient-x2: "0";
+	gradient-y2: "100%";
+	gradient-color2: "#859900";
 
 	y: 0;
 	width: 4;
@@ -31,8 +31,8 @@
 }
 
 .binary-digit-bottom {
-	gradient-color1: '#859900';
-	gradient-color2: '#000000';
+	gradient-color1: "#859900";
+	gradient-color2: "#000000";
 }
 
 .text {
@@ -76,7 +76,7 @@
 	height: 63;
 	fill: #cb4b16; /* orange */
 }
-.text-info5 {
+.text-info-mid-bottom {
 	x: 50%;
 	y: 60%+40;
 }
@@ -103,28 +103,40 @@
 	y: 45%;
 }
 
-.text-info1 {
+.text-info-mid-left {
 	x: 4%;
 	y: 55%+10;
 	text-anchor: start;
 	font-size: 30;
 }
-.text-info2 {
+.text-info-mid-left-2 {
 	x: 5%;
 	y: 55%+35;
 	text-anchor: start;
 }
 
-.text-info3 {
+.text-info-mid-right {
 	x: 96%;
 	y: 55%+10;
 	text-anchor: end;
 	font-size: 20;
 }
-.text-info4 {
+.text-info-bottom {
 	x: 50%;
 	y: 100%-50;
 	text-anchor: middle;
+}
+.text-info-mid-right-2 {
+	x: 96%;
+	y: 55%+40;
+	text-anchor: end;
+	font-size: 20;
+}
+.text-info-mid-right-2 {
+	x: 96%;
+	y: 55%+65;
+	text-anchor: end;
+	font-size: 20;
 }
 
 /* Colors */
