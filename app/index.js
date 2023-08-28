@@ -29,9 +29,11 @@ const txtDay = document.getElementById( 'txtDay' );
 
 const txtInfoMidLeft = document.getElementById( 'txtInfoMidLeft' );
 const txtInfoMidLeft2 = document.getElementById( 'txtInfoMidLeft2' );
-const txtInfoMidRight = document.getElementById( 'txtInfoMidRight' );
-const txtInfoBottom = document.getElementById( 'txtInfoBottom' );
+
 const txtInfoMidBottom = document.getElementById( 'txtInfoMidBottom' );
+const txtInfoBottom = document.getElementById( 'txtInfoBottom' );
+
+const txtInfoMidRight = document.getElementById( 'txtInfoMidRight' );
 const txtInfoMidRight2 = document.getElementById( 'txtInfoMidRight2' );
 const txtInfoMidRight3 = document.getElementById( 'txtInfoMidRight3' );
 

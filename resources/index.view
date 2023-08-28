@@ -13,12 +13,11 @@
 
     <image id="imgWeatherIcon" class="image image-weather-icon" href="img/weather/default.png"></image>
     <text id="txtInfoMidBottom" class="text text-info text-info-mid-bottom"></text>
+    <text id="txtInfoBottom" class="text text-info text-info-bottom"></text>
 
     <text id="txtInfoMidRight" class="text text-info text-info-mid-right"></text>
     <text id="txtInfoMidRight2" class="text text-info text-info-mid-right-2"></text>
     <text id="txtInfoMidRight3" class="text text-info text-info-mid-right-3"></text>
-
-    <text id="txtInfoBottom" class="text text-info text-info-bottom"></text>
 
 	<!-- Top Digits -->
     <gradientRect id="binary-digit-top-32" class="binary-digit binary-digit-top" x="22" y="40" />
