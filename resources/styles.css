@@ -54,6 +54,10 @@
 	text-length: 7;
 	font-size: 20;
 }
+.text-day-2 {
+	text-length: 7;
+	font-size: 20;
+}
 .text-date {
 	fill: #2aa198;
 }
@@ -85,6 +89,11 @@
 .text-day {
 	x: 96%;
 	y: 32%;
+	text-anchor: end;
+}
+.text-day-2 {
+	x: 96%;
+	y: 32%+20;
 	text-anchor: end;
 }
 

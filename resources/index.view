@@ -6,7 +6,8 @@
     <text id="txtDate" class="text text-date">5014-91-23</text>
     <text id="txtTime" class="text text-time">50:14</text>
 
-    <text id="txtDay" class="text text-day">SUN (2)</text>
+    <text id="txtDay" class="text text-day">SUN</text>
+    <text id="txtDay2" class="text text-day-2">(2)</text>
 
     <text id="txtInfoMidLeft" class="text text-info text-info-mid-left"></text>
     <text id="txtInfoMidLeft2" class="text text-info text-info-mid-left-2"></text>

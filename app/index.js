@@ -26,6 +26,7 @@ const txtBat = document.getElementById( 'txtBat' );
 const txtTime = document.getElementById( 'txtTime' );
 const txtDate = document.getElementById( 'txtDate' );
 const txtDay = document.getElementById( 'txtDay' );
+const txtDay2 = document.getElementById( 'txtDay2' );
 
 const txtInfoMidLeft = document.getElementById( 'txtInfoMidLeft' );
 const txtInfoMidLeft2 = document.getElementById( 'txtInfoMidLeft2' );
@@ -105,6 +106,10 @@ function clockCallback( data ) {
 	txtTime.text = data.time;
 	txtDate.text = data.date;
 	txtDay.text = data.day;
+	txtDay2.text = data.daynth;
+
+	// Request latest server data every minute when clock updates
+	requestHostedData();
 
 	let i = 0;
 	let digit;
@@ -157,6 +162,7 @@ function requestHostedData() {
 		console.log( 'ERROR: Messaging connection is not open' );
 	}
 }
+
 // Re-check for update every 30 minutes
-setInterval( requestHostedData, 1000 * 60 * 30 );
+// setInterval( requestHostedData, 1000 * 60 * 30 );
 // setInterval(requestHostedData, 1000); // for testing

@@ -29,7 +29,6 @@ function tickHandler( evt ) {
 	// Day of the week
 	const dayName = days[ now.getDay() ];
 	const dayNth = Math.ceil( dayNumber / 7 );
-	const dayString = `${ dayName } (${ dayNth })`;
 
 	// Time
 	let hours = now.getHours();
@@ -50,7 +49,8 @@ function tickHandler( evt ) {
 
 	clockCallback( {
 		date: dateString,
-		day: dayString,
+		day: dayName,
+		daynth: `(${ dayNth })`,
 		time: timeString,
 		unixSecondsArray: unixSecondsArray,
 	} );
