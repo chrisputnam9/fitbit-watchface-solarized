@@ -44,7 +44,7 @@
 	font-weight: regular;
 	text-anchor: middle;
 	font-size: 30;
-	fill: #839496;
+	fill: #839496; /* base0 */
 }
 .text-bat {
 	text-length: 4;
@@ -59,18 +59,17 @@
 	font-size: 20;
 }
 .text-date {
-	fill: #2aa198;
 }
 .text-time {
 	text-length: 8;
 	font-family: System-Bold;
 	font-size: 80;
-	fill: #268bd2;
+	fill: #268bd2; /* blue */
 }
 .text-info {
 	text-length: 60;
 	font-size: 17;
-	fill: #2aa198;
+	fill: #2aa198; /* cyan */
 }
 
 .image-weather-icon {
@@ -119,6 +118,11 @@
 	y: 55%+35;
 	text-anchor: start;
 }
+.text-info-mid-left-3 {
+	x: 5%;
+	y: 55%+55;
+	text-anchor: start;
+}
 
 .text-info-mid-bottom {
 	x: 50%;
@@ -128,27 +132,25 @@
 	x: 50%;
 	y: 100%-50;
 	text-anchor: middle;
+	fill: #b58900; /* yellow */
 }
 
 .text-info-mid-right {
 	x: 96%;
-	y: 55%+10;
+	y: 55%;
 	text-anchor: end;
-	font-size: 20;
 }
 .text-info-mid-right-2 {
 	x: 96%;
-	y: 55%+45;
+	y: 55%+35;
 	text-anchor: end;
-	font-size: 20;
-	fill: #6c71c4;
+	fill: #6c71c4; /* violet */
 }
 .text-info-mid-right-3 {
 	x: 96%;
-	y: 55%+70;
+	y: 55%+55;
 	text-anchor: end;
-	font-size: 20;
-	fill: #6c71c4;
+	fill: #6c71c4; /* violet */
 }
 
 /* Colors */

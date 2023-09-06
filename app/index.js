@@ -30,6 +30,7 @@ const txtDay2 = document.getElementById( 'txtDay2' );
 
 const txtInfoMidLeft = document.getElementById( 'txtInfoMidLeft' );
 const txtInfoMidLeft2 = document.getElementById( 'txtInfoMidLeft2' );
+const txtInfoMidLeft3 = document.getElementById( 'txtInfoMidLeft3' );
 
 const txtInfoMidBottom = document.getElementById( 'txtInfoMidBottom' );
 const txtInfoBottom = document.getElementById( 'txtInfoBottom' );
@@ -58,6 +59,7 @@ function showServerData( data ) {
 	txtInfoMidLeft.text = data.temperature;
 
 	txtInfoMidLeft2.text = data.temperature_range;
+	txtInfoMidLeft3.text = `(${ data.temperature_range_feel })`;
 
 	txtInfoMidRight.text = data.update_time;
 	txtInfoBottom.text = data.location;
@@ -109,7 +111,7 @@ function clockCallback( data ) {
 	txtDay2.text = data.daynth;
 
 	// Request latest server data every minute when clock updates
-	requestHostedData();
+	// requestHostedData();
 
 	let i = 0;
 	let digit;
@@ -165,4 +167,9 @@ function requestHostedData() {
 
 // Re-check for update every 30 minutes
 // setInterval( requestHostedData, 1000 * 60 * 30 );
-// setInterval(requestHostedData, 1000); // for testing
+
+// Every minute
+setInterval( requestHostedData, 1000 * 60 );
+
+// Every second - testing
+// setInterval( requestHostedData, 1000 );
