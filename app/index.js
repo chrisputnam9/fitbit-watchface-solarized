@@ -61,7 +61,7 @@ function showServerData( data ) {
 	txtInfoMidLeft2.text = data.temperature_range;
 	txtInfoMidLeft3.text = `(${ data.temperature_range_feel })`;
 
-	txtInfoMidRight.text = data.update_time;
+	txtInfoMidRight3.text = data.update_time;
 	txtInfoBottom.text = data.location;
 
 	const icon = data.weather_icon;
@@ -72,8 +72,8 @@ function showServerData( data ) {
 	txtInfoMidBottom.text = data.precipitation;
 
 	if ( 'status' in data && 'status' in data.status ) {
-		txtInfoMidRight2.text = data.status.status;
-		txtInfoMidRight3.text = '(' + data.status.last_swipe + ')';
+		txtInfoMidRight.text = data.status.status;
+		txtInfoMidRight2.text = '(' + data.status.last_swipe + ')';
 	}
 }
 
