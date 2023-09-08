@@ -5,7 +5,11 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@fitbit/sdk": "~6.1.0",
-		"@fitbit/sdk-cli": "^1.7.3"
+		"@fitbit/sdk-cli": "^1.7.3",
+		"eslint": "^8.48.0",
+		"prettier": "^3.0.3",
+		"stylelint": "^15.10.3",
+		"stylelint-config-standard": "^34.0.0"
 	},
 	"fitbit": {
 		"appUUID": "a45e1f62-160b-49dd-a600-866ec1199123",
@@ -18,7 +22,9 @@
 			"access_location",
 			"run_background"
 		],
-		"buildTargets": [ "vulcan" ],
+		"buildTargets": [
+			"vulcan"
+		],
 		"i18n": {},
 		"defaultLanguage": "en-US"
 	},

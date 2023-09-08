@@ -37,7 +37,7 @@ const txtInfoBottom = document.getElementById( 'txtInfoBottom' );
 
 const txtInfoMidRight = document.getElementById( 'txtInfoMidRight' );
 const txtInfoMidRight2 = document.getElementById( 'txtInfoMidRight2' );
-const txtInfoMidRight3 = document.getElementById( 'txtInfoMidRight3' );
+// const txtInfoMidRight3 = document.getElementById( 'txtInfoMidRight3' );
 
 const imgWeatherIcon = document.getElementById( 'imgWeatherIcon' );
 
@@ -59,9 +59,10 @@ function showServerData( data ) {
 	txtInfoMidLeft.text = data.temperature;
 
 	txtInfoMidLeft2.text = data.temperature_range;
-	txtInfoMidLeft3.text = `(${ data.temperature_range_feel })`;
+	// txtInfoMidLeft3.text = `(${ data.temperature_range_feel })`;
+	txtInfoMidLeft3.text = data.update_time;
 
-	txtInfoMidRight3.text = data.update_time;
+	//txtInfoMidRight3.text = data.update_time;
 	txtInfoBottom.text = data.location;
 
 	const icon = data.weather_icon;

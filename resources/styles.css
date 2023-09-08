@@ -6,11 +6,11 @@
 	gradient-type: radial;
 
 	gradient-x1: 50%;
-	gradient-y1: 65%;
-	gradient-color1: #002b36;
+	gradient-y1: 67%;
+	gradient-color1: #002b36; /* base03 */
 	gradient-x2: 100%;
 	gradient-y2: 100%;
-	gradient-color2: #000000;
+	gradient-color2: #000000; /* black */
 }
 
 .binary-digit {
@@ -19,11 +19,11 @@
 
 	gradient-x1: "0";
 	gradient-y1: "0";
-	gradient-color1: "#000000";
+	gradient-color1: "#000000"; /* black */
 
 	gradient-x2: "0";
 	gradient-y2: "100%";
-	gradient-color2: "#859900";
+	gradient-color2: "#859900"; /* green */
 
 	y: 0;
 	width: 4;
@@ -31,8 +31,8 @@
 }
 
 .binary-digit-bottom {
-	gradient-color1: "#859900";
-	gradient-color2: "#000000";
+	gradient-color1: "#859900"; /* green */
+	gradient-color2: "#000000"; /* black */
 }
 
 .text {
@@ -48,15 +48,15 @@
 }
 .text-bat {
 	text-length: 4;
-	font-size: 20;
+	font-size: 25;
 }
 .text-day {
 	text-length: 7;
-	font-size: 20;
+	font-size: 25;
 }
 .text-day-2 {
 	text-length: 7;
-	font-size: 20;
+	font-size: 25;
 }
 .text-date {
 }
