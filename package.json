@@ -3,33 +3,23 @@
 	"version": "0.3.0",
 	"private": false,
 	"license": "MIT",
-	"devDependencies": {
-		"@fitbit/sdk": "~6.1.0",
-		"@fitbit/sdk-cli": "^1.7.3",
-		"eslint": "^8.48.0",
-		"prettier": "^3.0.3",
-		"stylelint": "^15.10.3",
-		"stylelint-config-standard": "^34.0.0"
-	},
+	"devDependencies": {},
 	"fitbit": {
-		"appUUID": "a45e1f62-160b-49dd-a600-866ec1199123",
+		"appUUID": "170f75a3-612e-49c7-82ff-adc5e6bca2bf",
 		"appType": "clockface",
-		"appDisplayName": "Solarized Custom Watchface",
+		"appDisplayName": "Fitbit Solarized for Sense 2",
 		"iconFile": "resources/icon.png",
 		"wipeColor": "#ffffff",
-		"requestedPermissions": [
-			"access_internet",
-			"access_location",
-			"run_background"
-		],
-		"buildTargets": [
-			"vulcan"
-		],
+		"requestedPermissions": ["access_internet", "access_location", "run_background"],
+		"buildTargets": ["rhea"],
 		"i18n": {},
 		"defaultLanguage": "en-US"
 	},
 	"scripts": {
 		"build": "fitbit-build",
 		"debug": "fitbit"
+	},
+	"dependencies": {
+		"@fitbit/sdk": "~7.2.0-pre.0"
 	}
 }

@@ -172,8 +172,11 @@ function requestHostedData() {
 // Re-check for update every 30 minutes
 // setInterval( requestHostedData, 1000 * 60 * 30 );
 
-// Every minute
-setInterval(requestHostedData, 1000 * 60);
+// Every 5 minutes
+setInterval(requestHostedData, 1000 * 60 * 5);
+
+// Run on init
+requestHostedData()
 
 // Every second - testing
 // setInterval( requestHostedData, 1000 );
