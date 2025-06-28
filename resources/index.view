@@ -9,17 +9,20 @@
     <text id="txtDay" class="text text-day">SUN</text>
     <text id="txtDay2" class="text text-day-2">(2)</text>
 
+<!--
     <text id="txtInfoMidLeft" class="text text-info text-info-mid-left"></text>
     <text id="txtInfoMidLeft2" class="text text-info text-info-mid-left-2"></text>
     <text id="txtInfoMidLeft3" class="text text-info text-info-mid-left-3"></text>
 
-    <image id="imgWeatherIcon" class="image image-weather-icon" href="img/weather/default.png"></image>
+    <image id="imgWeatherIcon" class="image image-weather-icon" href="img/weather/partly-cloudy-day.png"></image>
+
     <text id="txtInfoMidBottom" class="text text-info text-info-mid-bottom"></text>
     <text id="txtInfoBottom" class="text text-info text-info-bottom"></text>
 
     <text id="txtInfoMidRight" class="text text-info text-info-mid-right"></text>
     <text id="txtInfoMidRight2" class="text text-info text-info-mid-right-2"></text>
     <text id="txtInfoMidRight3" class="text text-info text-info-mid-right-3"></text>
+-->
 
 	<!-- Top Digits -->
     <gradientRect id="binary-digit-top-32" class="binary-digit binary-digit-top" x="22" y="40" />

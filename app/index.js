@@ -28,6 +28,7 @@ const txtDate = document.getElementById('txtDate');
 const txtDay = document.getElementById('txtDay');
 const txtDay2 = document.getElementById('txtDay2');
 
+/*
 const txtInfoMidLeft = document.getElementById('txtInfoMidLeft');
 const txtInfoMidLeft2 = document.getElementById('txtInfoMidLeft2');
 const txtInfoMidLeft3 = document.getElementById('txtInfoMidLeft3');
@@ -40,6 +41,7 @@ const txtInfoMidRight = document.getElementById('txtInfoMidRight');
 const txtInfoMidRight3 = document.getElementById('txtInfoMidRight3');
 
 const imgWeatherIcon = document.getElementById('imgWeatherIcon');
+*/
 
 const rectBinaryDigits = {
 	top: [],
@@ -51,6 +53,7 @@ for (let i = 0; i <= 32; i++) {
 }
 
 // Set data from server to watchface
+/*
 function showServerData(data) {
 	txtInfoMidLeft.text = data.temperature;
 
@@ -80,6 +83,7 @@ function showServerData(data) {
 		txtInfoMidRight3.text = '(' + data.status.last_swipe + ')';
 	}
 }
+*/
 
 // Load from file cache
 console.log('Checking local JSON cache');
